@@ -10,11 +10,11 @@ var connection,channel,qName
 //setting gloabbaly connection variable channel variable and queue name 
 
 app.use('/',userRouter)
-console.log('oke')
+
 
 export const connect=async()=>{
 
-    const url='amqp://localhost:5672'
+    const url='amqp://host.docker.internal:5672'
           connection=await amqp.connect(url)
           channel=await connection.createChannel()
           qName='PAYMENT'

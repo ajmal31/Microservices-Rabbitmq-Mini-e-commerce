@@ -3,7 +3,7 @@ import amqp from 'amqplib'
 export default{
 
  sendToPaymentSrv:async(data)=>{
-        const url='amqp://localhost:5672'
+        const url='amqp://host.docker.internal:5672'
         const connection=await amqp.connect(url)
         const channel=await connection.createChannel()
         const qName='PRODUCT'

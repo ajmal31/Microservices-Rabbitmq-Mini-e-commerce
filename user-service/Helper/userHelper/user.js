@@ -16,7 +16,7 @@ export default{
             email:email,
             password:password
         }) 
-        const response=await User.save()
+        const response=await User.save()  
         return response
     },
     userLogin:async(data)=>{

@@ -34,7 +34,7 @@ export default{
     let result= await adminHelper.getOneProduct(pid)
 
     if(result) res.status(302).send(result)
-    else res.status(404)
+    else res.status(404).send('product not found')
   },
   purchase:async(req,res)=>{
 

@@ -13,7 +13,7 @@ app.post('/createUser',userController.createUser)
 app.post('/userLogin',userController.userLogin)
 
 //USER DELETE
-app.get('/deleteUser',userController.deleteUser)
+app.get('/deleteUser',userController.deleteUser) 
 
 
 

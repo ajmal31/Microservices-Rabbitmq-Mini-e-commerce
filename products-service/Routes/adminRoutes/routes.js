@@ -1,9 +1,9 @@
 import express from "express";
 import adminController from '../../controller/adminController/adminController.js'
-import isAuthenticate from '../../../isAuthenticate/isAuthenticate.js'
+import isAuthenticate from "../../middlewares/isAuthenticate.js"
 const app=express()
 
-app.use(isAuthenticate)
+// app.use(isAuthenticate)
 app.post('/addProduct',adminController.addProduct)
 
 app.get('/deleteProduct/:id',adminController.deleteProduct)
