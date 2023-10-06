@@ -9,7 +9,7 @@ db()
 var channel,qName,queue
 const connect=async()=>{
 
-    const url='amqp://localhost:5672'
+    const url='amqp://host.docker.internal:5672'
     const connection=await amqp.connect(url)
     channel=await connection.createChannel()
     qName='ORDERS'

@@ -13,7 +13,7 @@ export default{
         
         const foreign='ORDERS'
 
-        channel.sendToQueue(foreign,Buffer.from(JSON.stringify(req.body)))
+        channel.sendToQueue(foreign,Buffer.from(JSON.stringify(req?.body)))
 
         console.log('message sent to orders service payment method: COD')
         
