@@ -4,15 +4,15 @@ import isAuthenticate from "../../middlewares/isAuthenticate.js"
 const app=express()
 
 // app.use(isAuthenticate)
-app.post('/addProduct',adminController.addProduct)
+app.post('/product-srv/addProduct',adminController.addProduct)
 
-app.get('/deleteProduct/:id',adminController.deleteProduct)
+app.get('/product-srv/deleteProduct/:id',adminController.deleteProduct)
 
-app.get('/getAllproducts',adminController.getAllproducts)
+app.get('/product-srv/getAllproducts',adminController.getAllproducts)
 
-app.get('/getOneProduct/:id',adminController.getOneProduct)
+app.get('/product-srv/getOneProduct/:id',adminController.getOneProduct)
 
-app.get('/purchase/:id',adminController.purchase)
+app.get('/product-srv/purchase/:id',adminController.purchase)
 
 
 

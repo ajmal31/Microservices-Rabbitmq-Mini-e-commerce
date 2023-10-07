@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: order
+  template:
+    metadata:
+      labels:
+        app: order
+    spec:
+      containers:
+        - name: order
+          image: muhammedajmal/order-srv:v1    
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-srv           
+spec:
+  selector:
+    app: order  
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000  

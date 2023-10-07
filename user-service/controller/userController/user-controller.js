@@ -44,6 +44,11 @@ export default{
     
      userHelper.deleteUser()
 
+    },
+    getAllusers:async(req,res)=>{
+      
+      let result=await userHelper.getAllUsers()
+      res.status(201).send(result)
     }
 
 }

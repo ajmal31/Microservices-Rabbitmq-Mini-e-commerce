@@ -28,6 +28,10 @@ export default{
         
          
 
+    },
+    getAllUsers:(req,res)=>{
+        let a= ' i got all user details'
+        return a
     }
 
 }
