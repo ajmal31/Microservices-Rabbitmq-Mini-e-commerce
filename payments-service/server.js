@@ -9,12 +9,13 @@ app.use(express.json())
 var connection,channel,qName
 //setting gloabbaly connection variable channel variable and queue name 
 
-app.use('/',userRouter)
+app.use('/payment-srv/',userRouter)
 
 
 export const connect=async()=>{
 
     const url='amqp://host.docker.internal:5672'
+    // const url='amqp://localhost:5672'
           connection=await amqp.connect(url)
           channel=await connection.createChannel()
           qName='PAYMENT'
@@ -43,7 +44,7 @@ connect().then(()=>{
 })
 
 
-// app.use('/',userRouter)
+app.use('/',userRouter)
 app.listen(port,()=>{
     console.log(`payment service listening on port ${port}`)
 })

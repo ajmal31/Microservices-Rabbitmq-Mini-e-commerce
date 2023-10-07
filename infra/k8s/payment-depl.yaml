@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: payment
-          image: muhammedajmal/payment-srv:v1
+          image: muhammedajmal/payment-srv:v2
 ---
 # SERVICE OBJECT CONFIGURATION FOR PAYMENT SERVICE
 apiVersion: v1

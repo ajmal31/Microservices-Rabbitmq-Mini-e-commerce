@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-srv
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
   - host: ajmal.com
@@ -14,4 +16,18 @@ spec:
             name: user-srv
             port:
               number: 3004
+      - path: /product-srv/?(.*)  # Path for admin routes
+        pathType: Prefix
+        backend:
+          service:
+            name: product-srv
+            port:
+              number: 3003
+      - path: /payment-srv/?(.*)  # Path for admin routes
+        pathType: Prefix
+        backend:
+          service:
+            name: payment-srv
+            port:
+              number: 3002
   ingressClassName: nginx

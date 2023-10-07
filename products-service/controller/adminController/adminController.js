@@ -12,6 +12,12 @@ export default{
      }else res.status(404)
 
   },
+  admin:(req,res)=>{
+    res.status(201).json({message:'prodcut-srv admin side working properly'})
+  },
+  check:(req,res)=>{
+     res.status(200).json({message:'product-srv working properly'})
+  },
   deleteProduct:async(req,res)=>{
 
     const {id}=req.params

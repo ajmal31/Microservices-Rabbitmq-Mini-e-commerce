@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: product
-          image: muhammedajmal/product-srv:v1
+          image: muhammedajmal/product-srv:v3
 ---
 apiVersion: v1
 kind: Service

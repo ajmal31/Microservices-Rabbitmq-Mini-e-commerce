@@ -18,6 +18,9 @@ export default{
         console.log('message sent to orders service payment method: COD')
         
 
+    },
+    check:(req,res)=>{
+        res.status(201).json({message:'payment service working properly'})
     }
 
 }
