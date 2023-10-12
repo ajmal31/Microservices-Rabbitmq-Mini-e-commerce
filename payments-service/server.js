@@ -36,7 +36,7 @@ connect().then(()=>{
         console.log('hai')
         const product=JSON.parse(data.content)
         console.log(product)
-        //this data want to send frontend even after wanto display
+        //this data want to send the frontend. when the  user click payment button then will be handle
        channel.ack(data)
 
         

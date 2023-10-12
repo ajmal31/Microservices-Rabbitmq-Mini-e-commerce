@@ -13,6 +13,7 @@ const connect=async()=>{
     const connection=await amqp.connect(url)
     channel=await connection.createChannel()
     qName='ORDERS'
+    foriegn='PAYMENT'
     queue=await channel.assertQueue(qName)
     
     
@@ -39,6 +40,7 @@ connect().then(()=>{
         userHelper.addOrders(obj).then((response)=>{
           
             console.log('order created succfully',response)
+            channel.sendToQueue()
 
 
         })
